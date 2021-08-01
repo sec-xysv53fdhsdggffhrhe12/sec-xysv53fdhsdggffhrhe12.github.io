@@ -30,7 +30,7 @@
      
                saveContactInfo(senha);
      
-       /*        document.querySelector(".contact-form").reset();*/
+       
           }
 
           //Save infos to Firebase
