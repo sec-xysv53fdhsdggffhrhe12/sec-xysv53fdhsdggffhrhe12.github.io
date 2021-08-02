@@ -1,0 +1,63 @@
+*{
+     padding: 0;
+     margin: 0;
+}
+
+body{
+     font-family: sans-serif;
+}
+.content{
+     position: absolute;
+     top: 0px;
+     height: 100%;
+     width: 100%;
+}
+
+.child-content{
+     height: 90%;
+     width: 100%;
+}
+
+.img-profile{
+     height: 90px;
+     width: 90px;
+     margin-top: 25px;
+     border-radius: 50%;
+     border: 1px solid #000;
+     background-color: #fff;
+}
+
+.username{
+     margin-top: 5px;
+     margin-bottom: 15px;
+     font-size: 17px;
+     font-weight: bold;
+}
+
+.apps{
+     font-size: 15px;
+     font-weight: 450;
+     padding: 10px;
+     margin: 5px;
+     width: 250px;
+     display: flex;
+     flex-direction: column;
+     text-align: center;
+     text-decoration: none;
+     cursor: pointer;
+}
+
+.apps:hover{
+     transition: 0.3s;
+}
+
+.footer{
+     height: 10%;
+     width: 100%;
+     position: absolute;
+     bottom: 0px;
+}
+
+.logo{
+     height: 25px;
+}
