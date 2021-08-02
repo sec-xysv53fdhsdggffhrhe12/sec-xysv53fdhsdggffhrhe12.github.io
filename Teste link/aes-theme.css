@@ -1,0 +1,19 @@
+.content{
+     background: url(https://wallpapercave.com/wp/wp9602380.jpg);
+     background-size: cover;
+}
+
+.username{
+     color: #fff;
+}
+
+.apps{
+     color: #fff;
+     background: url(https://lh3.googleusercontent.com/pw/AM-JKLXkKgsYJur4b7ijkJQCz4mR0GpZz76hyzHg1YwGCBMphA1mZYLWuigfoXIah9ZFrEpKl6T6pk3XbExCyt347arDozgdkwJ3qgkNmKhhu1_L3XlM__qLbWs8Zja6-U06sdpd7o02l7eh4o7OZ7NPRR-w=s720-no);
+     border: 2px solid #fff;
+}
+
+.apps:hover{
+     color: #000;
+     background-color: #fff;
+}
