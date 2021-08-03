@@ -63,7 +63,7 @@ body{
 
 .logo{
      height: 20px;
-     width: 72px;
+     background-size: cover;
 }
 
 .copyright{
