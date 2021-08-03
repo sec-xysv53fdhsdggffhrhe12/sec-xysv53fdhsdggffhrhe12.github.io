@@ -70,10 +70,10 @@ body{
      display: flex;
      flex-direction: row;
      flex-wrap: nowrap;
-     color: #fff;
+     color: grey;
      margin-top: 5px;
      font-size: 11px;
-     opacity: 60%;
+     opacity: 90%;
 }
 
 .lg-year{
