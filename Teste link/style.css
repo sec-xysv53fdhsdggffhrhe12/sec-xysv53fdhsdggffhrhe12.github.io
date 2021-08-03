@@ -67,8 +67,19 @@ body{
 }
 
 .copyright{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
      color: #fff;
      margin-top: 5px;
      font-size: 11px;
      opacity: 60%;
+}
+
+.lg-year{
+     margin-right: 1.2px;
+}
+
+.who-img{
+     margin-left: 1.2px;
 }
